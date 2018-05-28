@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Http,Response} from '@angular/http';
 import { Contact } from '../shared/contact.model';
 import { ApiService } from '../shared/api.service';
 
@@ -14,7 +15,7 @@ export class ContactListComponent implements OnInit {
   constructor(public api: ApiService) { }
 
   ngOnInit() {
-    this.api.get('contacts')
+    this.api.get('api/contacts')
       .subscribe(data => this.contacts = data);
   }
 
